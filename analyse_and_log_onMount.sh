@@ -12,9 +12,9 @@ mkdir -p "$diskdescdir";
 
 # Log disk usage & Update disk description
 df -h | grep "Volumes" | grep -v "MobileBackups" | awk '{print $2"|"$3"|"$4"|"$5"|"$6}' | while read l; do 
-	echo "$ts|$l" >> "$logusage"
 	mountpoint="$(echo $l | awk -F"|" '{print $5}')";
 	uuid="$(diskutil info "$mountpoint" | grep UUID | awk '{print $3}')"
 	diskutil info "$mountpoint" > "$diskdescdir/$uuid.txt"
+	echo "$ts|$uuid|$l" >> "$logusage"
 done
 	
