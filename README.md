@@ -8,6 +8,10 @@ Contents
  * a plist file (com.x.x.x) to be put in ~/Library/LaunchAgents (it must have the .plist extension)
  * a bash script that does the works when a mount is done
 
+Works Done onMount
+ * df -h
+ * update disk characteristics (uuid, etc)
+
 Notes 
  * Time machine drive (df -h) is ignored
 
