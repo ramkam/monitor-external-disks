@@ -1,0 +1,8 @@
+http://superuser.com/questions/226504/unmount-a-volume-as-soon-as-its-inserted-if-its-name-is-xyz
+
+the plist file (com.x.x.x) must be put in ~/Library/LaunchAgents
+
+load it immediately with 
+launchctl load ~/Library/LaunchAgents/pathtoplist
+
+or wait for next login (it will autoload)
